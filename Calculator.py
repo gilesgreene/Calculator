@@ -1,0 +1,42 @@
+import math
+
+total_result = 0
+result_count = 0
+
+while True:
+    print(" Calculator Menu \n --------------- \n 0. Exit Program \n 1. Addition \n 2. Subtraction \n 3. Multiplication \n 4. Division \n 5. Exponentiation \n 6. Logarithm \n 7. Display Average")
+    print("\n Enter Menu Selection: ")
+    menu = int(input())
+    if menu < 0 or menu > 7:
+        print("Error: Invalid selection!")
+        continue
+
+    if menu == 0:
+        print("Thanks for using this calculator. Goodbye!")
+        break
+
+    if menu == 7:
+        if result_count == 0:
+            print("Error: no calculations yet to average! \n")
+        else: print("Sum of calculations: " ,total_result, "\n Number of calculations: " ,result_count, "\n Average of calculations: " ,round(total_result/result_count,2))
+        continue
+    print("Enter first operand: ")
+    first = float(input())
+    print("Enter second operand: ")
+    second = float(input())
+    if menu == 1:
+        result = first + second
+    elif menu == 2:
+        result = first - second
+    elif menu == 3:
+        result = first * second
+    elif menu == 4:
+        result = first / second
+    elif menu == 5:
+        result = first ** second
+    elif menu == 6:
+        result = math.log(second, first)
+
+    print("Current Result: " ,result)
+    total_result += result
+    result_count += 1
